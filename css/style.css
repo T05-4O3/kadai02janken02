@@ -1,0 +1,596 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+body {
+    /* font-family: 'Open Sans', Helvetica, Arial, "sans-serif"; */
+    font-family: "Sawarabi Mincho";
+    font-size: 100%;
+    color: #000; 
+    background-color: #cdd6d5;
+}
+#wrapper {
+    width: 100%; 
+    margin: 0 auto;
+    background-color: #eef4f2;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+}
+header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    background-size: 50px 50px;
+    background-image:
+    radial-gradient(circle at top left, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%),
+    radial-gradient(circle at top right, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%),
+    radial-gradient(circle at bottom left, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%),
+    radial-gradient(circle at bottom right, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%);
+    background-repeat: repeat;
+}
+h1 {
+    margin: 0;
+    margin-left: 1.4rem;
+}
+.header-r {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1.4rem;    
+}
+.sns_box {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-right: 20px;
+}
+.sns_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 2px #233656;
+    border-radius: 100%;
+    -moz-transition: all 280ms ease;
+    -o-transition: all 280ms ease;
+    -webkit-transition: all 280ms ease;
+    transition: all 280ms ease;
+}
+.sns_button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: #233656;
+    text-align: center;
+    -moz-transition: all 280ms ease;
+    -o-transition: all 280ms ease;
+    -webkit-transition: all 280ms ease;
+    transition: all 280ms ease;
+}
+.sns_button i {
+    font-size: 20px;
+    vertical-align: middle;
+}
+.sns_button:hover {
+    box-shadow: inset 0 0 0 22px #334f7d;
+}
+.sns_button + .sns_button {
+    margin: 0 0 0 12px;
+}
+.twitter:hover a {
+    color: #334f7d;
+}
+.facebook:hover a {
+    color: #334f7d;
+}
+.instagram:hover a {
+    color: #334f7d;
+}
+.rule-button,
+.modal-window > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.modal-window img[src="img/main/fgol.png"],
+.modal-window ul.modal-list {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+.rule-button,
+.modal-window ul.modal-list {
+    margin-left: 0.5rem;
+}
+.rule-button,
+.modal-window > div > .accorsion {
+    grid-column: 1 / span 2;
+    text-align: left;
+}
+.menu {
+    background-color: none;
+    text-decoration: none;
+    font-size: medium;
+}
+.modal-window {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+    overflow-y: scroll;
+}
+.modal-window:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-window > div {
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 2em;
+    background: white;
+    border-radius: 1rem;
+    margin-bottom: 15px;
+}
+.modal-window > div > .accordion {
+    flex-basis: 100%;
+    text-align: left;
+}
+.modal-window header {
+    font-weight: bold;
+}
+.modal-window  ul li {
+    margin: 0 0 1rem 1.5rem;
+}
+.modal-close {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+.modal-close:hover {
+    color: black;
+}
+
+.toggle_title {
+	font-weight: bold;
+	line-height: 42px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	position: relative;
+	cursor: pointer;
+	transition: 0.3s;
+}
+.toggle_title:hover {
+	color: #233656;
+}
+.toggle_title:after {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	position:absolute;
+	top: 50%;
+	right: 7px;
+	transform: translateY(-50%);
+	transition: 0.2s;
+}
+.toggle_title.selected:after {
+	transform: translateY(-50%) rotate(180deg);
+}
+.toggle_title.selected:after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.toggle_txt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.toggle_img {
+    max-width: 100%;
+}
+.toggle_ul {
+    max-width: 100%;
+}
+
+#banner {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5eee6;
+    background-image:
+    radial-gradient(circle at 3% 3%, rgba(0, 0, 0, 0.05) 5%, transparent 5%),
+    radial-gradient(circle at 97% 3%, rgba(0, 0, 0, 0.05) 5%, transparent 5%),
+    radial-gradient(circle at 3% 97%, rgba(0, 0, 0, 0.05) 5%, transparent 5%),
+    radial-gradient(circle at 97% 97%, rgba(0, 0, 0, 0.05) 5%, transparent 5%);
+    background-size: 10px 10px;
+    background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    background-repeat: repeat;
+}
+img {
+    display: block;
+}
+.playerCount p,
+.compCount p {
+    color: #415b76;
+    font-size: 1.4rem;
+    border-bottom: 4px solid #cdd6d5;
+    width: 200px;
+}
+.compCount p {
+    text-align: right;
+}
+.playCounters,
+.compCounters {
+    display: flex;
+}
+.compCounters {
+    justify-content: flex-end;
+}
+.playCounter1,
+.playCounter2,
+.playCounter3,
+.compCounter1,
+.compCounter2,
+.compCounter3 {
+    height: 20px;
+    width: 20px;
+    background-color: #cdd6d5;
+    border-radius: 10px;
+}
+.playCounter1,
+.playCounter2,
+.playCounter3{
+    margin: 5px 5px 0 0;
+}
+.compCounter1,
+.compCounter2,
+.compCounter3 {
+    margin: 5px 0 0 5px;
+}
+.round {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Sawarabi Mincho";
+}
+.roundNum {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.roundTitle {
+    font-size: 2.8rem;
+}
+#fgol {
+    position: relative;
+    font-size: 1.2em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #012a52;
+}
+
+.result {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6em;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 5px;
+    display: none;
+    opacity: 0;
+    width: 80%;
+    text-align: center;
+}
+.fgolOptions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 900px;
+    justify-items: center;
+    align-items: center;
+    margin: 20px auto;
+}
+.fgolOptions > .a {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fgolOptions > .a > figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fgolOptions > .b {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fgolOptions > .b > figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fgolOptions > .c {
+    grid-row: 1;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fgolOptions > .c > figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fgolOptions > .d {
+    grid-row: 1;
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fgolOptions > .d > figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fgolOptions > .e {
+    grid-row: 1;
+    grid-column: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.fgolOptions > .e > figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fgolOptions > .a > p,
+.fgolOptions > .b > p,
+.fgolOptions > .c > p,
+.fgolOptions > .d > p,
+.fgolOptions > .e > p {
+    margin: 0.5rem 0 0 0;
+    color: #fff;
+}
+
+/************** BOTTOM **************/
+#bottom {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    background-color: none;
+    background-size: 10px 10px;
+    background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    background-repeat: repeat;
+}
+.go, .replay {
+    display: flex;
+    padding: 20px;
+    align-content: center;
+    justify-content: center;
+}
+button {
+    height: 60px;
+    width: 180px;
+    font-size: 150%;
+    background-color: #334f7d;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Sawarabi Mincho";
+    box-shadow: 0 -2px 0 3px #233656 inset, 0 5px 5px rgba(3, 25, 41, 0.17), 0 15px rgba(255, 255, 255, 0.25) inset;
+    display: inline-block;
+}
+button:hover {
+    background-color: #233656;
+    box-shadow: 0 -2px 0 3px #1a1a1a inset, 0 5px 5px rgba(0, 0, 0, 0.17), 0 15px rgba(255, 255, 255, 0.32) inset;
+}
+
+#footer {
+    height: 80px;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-size: 50px 50px;
+    background-image:
+    radial-gradient(closest-side, rgba(25,68,142,0.4) 98%, rgba(25,68,142,0.3) 100%),
+    radial-gradient(circle at top left, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%),
+    radial-gradient(circle at top right, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%),
+    radial-gradient(circle at bottom left, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%),
+    radial-gradient(circle at bottom right, rgba(25,68,142,0.13) 35%, rgba(255, 255, 255, 0) 35% 100%);
+    background-repeat: repeat;
+}
+
+@media screen and (max-width: 980px) {
+    .wrapper {
+    width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        align-items: center;
+    }
+    h1 {
+        flex: 1;
+        text-align: left;
+    }    
+    .sns_box {
+        text-align: right;
+        flex: 1;
+    }
+    .sns_button {
+        margin: 0 5px;
+    }
+    .sns_button a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .modal-window {
+        overflow-y: scroll;
+        font-size: 0.7rem;
+    }
+    .modal-window img[src="img/main/fgol.png"] {
+        margin: 0 auto;
+    }
+    .modal-window ul.modal-list {
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+    .modal-window > div > .accordion {
+        flex-basis: 100%;
+    }
+    .toggle_txt {
+        flex-direction: column;
+        align-items: center;
+    }
+    .toggle_img {
+        margin-bottom: 1rem;
+    }
+    
+    .banner {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-template-rows: auto;
+        gap: 5px;
+    }
+    .playerCount {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        width: auto;
+    }
+    .compCount {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+        width: auto;
+    }
+    .round {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .roundNum {
+        margin-right: 5px;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+        text-align: left;
+    }
+    .result {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.8em;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 5px;
+        display: none;
+        opacity: 0;
+        width: 70%;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    #fgol {
+        font-size: 0.8em;
+    }
+    .fgolOptions {
+        width: 300px;
+    }
+    .fgolOptions > .a {
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        justify-self: center;
+        text-align: center;
+    }
+    .fgolOptions > .b {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .fgolOptions > .c {
+        grid-row: 2;
+        grid-column: 2;
+    }
+    .fgolOptions > .d {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    .fgolOptions > .e {
+        grid-row: 3;
+        grid-column: 2;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sns_button a {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .playerCount p, .compCount p {
+        font-size: 1.3rem;
+        width: 100px;
+    }
+    .roundNum {
+        font-size: 2.4rem;
+    }
+    .roundTitle {
+        font-size: 2.4rem;
+    }
+    .fgolOptions {
+        width: 240px;
+    }
+}
