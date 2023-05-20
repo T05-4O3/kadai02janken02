@@ -2,7 +2,7 @@
 G’sAcademy課題02 じゃんけんゲーム 天孫降臨
 ## DEMO
 - <http://observation.jp/t05_4o3_m/fgol/index.html>
-- [5/20午後追加]:<http://observation.jp/t05_4o3_m/manga1frame/index.html>
+- [5/20午後追加]：<http://observation.jp/t05_4o3_m/manga1frame/index.html>
 ## ①課題内容（どんな作品か）
 - ５すくみのじゃんけんをベースに、日本神話のシナリオを追加し、レスポンシブにも対応
 - [追加分]：今日のヒトコマとのセレンディップな出会い〜保存しておこうかな〜そのままSNSに投稿しちゃおうができる
